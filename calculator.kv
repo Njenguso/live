@@ -1,0 +1,58 @@
+<CalculatorWidget>
+    BoxLayout
+        orientation: "vertical"
+        size: root.width, root.height
+
+        TextInput:
+            id: input_box
+            text: ""
+            font_size: 43
+            multiline: False
+            readonly: True
+            halign: "center"
+            size_hint: (1, 0.19)
+            background_color: (0/255, 0/255, 0/255, 1)
+            foreground_color: (1, 1, 1, 1)
+
+        GridLayout:
+            cols: 1
+            rows: 5
+                  
+            Button:
+                text: "2,3,4,5,6"
+                font_size: 32
+                background_color: (2/255, 10/255, 24/255, 1)
+                size_hint: (0.2, 0.2)
+                on_press: root.button_value('+1')
+               
+            Button:
+                text: "7,8,9"
+                font_size: 32
+                background_color: (2/255, 10/255, 24/255, 1)
+                size_hint: (0.2, 0.2)
+                on_press: root.button_value('+0')
+                         
+            Button:
+                text: "10,A,J,K,Q"
+                font_size: 32
+                background_color: (2/255, 10/255, 24/255, 1)
+                size_hint: (0.2, 0.2)
+                on_press: root.button_value('-1')      
+               
+            Button:
+                text: "C"
+                font_size: 32
+                background_color: (2/255, 10/255, 24/255, 1)
+                size_hint: (0.2, 0.2)               
+                on_press: root.reset()
+               
+            TextInput:               
+                text: root.text
+                font_size: 35
+                multiline: False
+                halign: "left"
+                readonly: True
+                size_hint: (0.2, 0.2)               
+                background_color: (0/255, 0/255, 0/255, 1)               
+                foreground_color: (1, 1, 1, 1)
+            
